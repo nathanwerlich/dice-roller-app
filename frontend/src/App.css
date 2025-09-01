@@ -1,0 +1,229 @@
+/* src/App.css */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 1rem;
+}
+
+.container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.lobby h1 {
+  margin-bottom: 2rem;
+  color: #1a73e8;
+}
+.input-field {
+  width: calc(100% - 22px);
+  padding: 10px;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+}
+.btn-primary,
+.btn-secondary {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-primary {
+  background-color: #1a73e8;
+  color: white;
+  margin-bottom: 1rem;
+}
+.btn-primary:hover {
+  background-color: #155ab6;
+}
+.btn-primary:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+}
+.join-section {
+  margin-top: 1.5rem;
+}
+.btn-secondary {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+}
+.btn-secondary:hover {
+  background-color: #d2e3fc;
+}
+
+.room header {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.room h2 span {
+  background-color: #e8f0fe;
+  color: #1a73e8;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.dice-area {
+  margin: 1rem 0;
+}
+.dice-selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 1.5rem;
+}
+.btn-die {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-weight: 500;
+}
+.btn-die:hover {
+  background-color: #e8f0fe;
+  border-color: #1a73e8;
+}
+.btn-die.active {
+  background-color: #1a73e8;
+  color: white;
+  border-color: #1a73e8;
+}
+
+/* VOLTAMOS PARA OS ESTILOS ANTIGOS DO DADO */
+.dice-display {
+  margin: 0 auto 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+}
+.dice-value {
+  width: 100px;
+  height: 100px;
+  background-color: #34a853;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4rem;
+  font-weight: bold;
+  border-radius: 16px;
+}
+.dice-type {
+  font-size: 1.5rem;
+  color: #888;
+  font-weight: 500;
+}
+
+.roll-btn {
+  width: auto;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+}
+
+/* A ANIMAÇÃO CONTINUA A MESMA */
+@keyframes roll-animation {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  15% {
+    transform: rotate(-10deg) translateX(-15px);
+  }
+  30% {
+    transform: rotate(10deg) translateX(15px);
+  }
+  45% {
+    transform: rotate(-20deg) scale(1.1);
+  }
+  60% {
+    transform: rotate(20deg) scale(1.1);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg) scale(1);
+  }
+}
+
+.dice-value.rolling {
+  animation: roll-animation 1s ease-in-out;
+}
+
+.history-area {
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 1rem;
+  height: 180px;
+  overflow-y: auto;
+  text-align: left;
+}
+.history-area h3 {
+  margin-top: 0;
+}
+.history-area ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.history-area li {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.history-area li:last-child {
+  border-bottom: none;
+}
+.history-area li.my-roll {
+  background-color: #e8f0fe;
+  font-weight: bold;
+}
+.history-die-type {
+  font-size: 0.9em;
+  color: #555;
+  background-color: #e0e0e0;
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+li.my-roll .history-die-type {
+  background-color: #d2e3fc;
+}
+
+/* ADICIONAMOS O ESTILO PARA A ÁREA DE TOTAL */
+.total-area {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #eee;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #333;
+}
+
+.total-area strong {
+  color: #1a73e8;
+}
