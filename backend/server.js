@@ -20,7 +20,7 @@ const io = new Server(server, {
   cors: {
     origin: [
       "http://localhost:3000",
-      "https://dice-roller-dno15qz3m-nathanwerlichs-projects.vercel.app",
+      "https://dice-roller-app-three.vercel.app",
     ],
     methods: ["GET", "POST"],
   },
